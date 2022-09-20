@@ -39,66 +39,101 @@ public class Input {
     }
     
     public void generateInput() throws IOException {
-        Path currentRelativePath = Paths.get("");
-        String s = currentRelativePath.toAbsolutePath().toString();
-        System.out.println("Current absolute path is: " + s);
 
 
-        Scanner sc = new Scanner(System.in); 
+        // ---- Students-----
+        String str = Files.readString(Path.of("src\\main\\java\\StudentNames.txt"));
+        String[] arrOfStr = str.split(",");
+        System.out.println(arrOfStr);
+        String strAddress = Files.readString(Path.of("src\\main\\java\\StudentAddress.txt"));
+        String[] arrOfStrAddress = strAddress.split(",");
+        System.out.println(arrOfStrAddress);
+
+        for (int i = 0; i < set_3_students; i++) {
 
 
-            long telephone = 999999999;
-            String gender = "Female";
-            String birthDate = "02-02-1996";
-            String registrationDate = "05-05-2012";
-            String address = "Rua Simoes Pinto";
+            String birthDate = generateRandomDate();
+            String registrationDate = generateRandomDate();
 
-            // ---- Students-----
-            String str = Files.readString(Path.of( "src\\main\\java\\StudentNames.txt"));
-            String[] arrOfStr = str.split(",");
-            System.out.println(arrOfStr);
-            
-            for(int i = 0; i < set_3_students; i++){
-                Student student = new Student(i, arrOfStr[i], telephone, gender, birthDate, registrationDate, address);
+            long telephone = generateRandomTelephone();
+            Student student = new Student(i+1, arrOfStr[i], telephone, generateGender(), birthDate, registrationDate, arrOfStrAddress[i]+generateAddressType());
 
-                if(i < set_1_students){
-                    studentNames_set1.add(student);
-                }
-
-                if(i < set_2_students){
-                    studentNames_set2.add(student);
-                }
-
-                studentNames_set3.add(student);
+            if (i < set_1_students) {
+                studentNames_set1.add(student);
             }
 
-            // ---- Professors-----
-            String strProf = Files.readString(Path.of("src\\main\\java\\ProfessorNames.txt"));
-            String[] arrOfStrProf = strProf.split(",");
-            System.out.println(arrOfStrProf);
-            int numberOfStudents = set_1_students/set_1_professors;
-            
-            for(int i = 0; i < set_3_professors; i++){
-                Professor p = new Professor(i, arrOfStrProf[i], telephone, birthDate, address);
-
-                for(int j  = i*numberOfStudents ; j< i*numberOfStudents+numberOfStudents; ++j){
-                    p.AddStudent(studentNames_set3.get(j));
-                }
-
-                
-                if(i < set_1_professors){
-                    professorNames_set1.add(p);
-                }
-                if(i < set_2_professors){
-    professorNames_set2.add(p);
-                }
-                professorNames_set3.add(p);
-
+            if (i < set_2_students) {
+                studentNames_set2.add(student);
             }
+
+            studentNames_set3.add(student);
+        }
+
+        // ---- Professors-----
+        String strProf = Files.readString(Path.of("src\\main\\java\\ProfessorNames.txt"));
+        String[] arrOfStrProf = strProf.split(",");
+        System.out.println(arrOfStrProf);
+
+        String strAddressProf = Files.readString(Path.of("src\\main\\java\\ProfessorAddress.txt"));
+        String[] arrOfStrAddressProf = strAddressProf.split(",");
+        System.out.println(arrOfStrAddressProf);
+        int numberOfStudents = set_1_students / set_1_professors;
+
+        for (int i = 0; i < set_3_professors; i++) {
+            long telephone = generateRandomTelephone();
+            String birthDate = generateRandomDate();
+
+            Professor p = new Professor(i+1, arrOfStrProf[i], telephone, birthDate, arrOfStrAddressProf[i]+generateAddressType());
+
+            for (int j = i * numberOfStudents; j < i * numberOfStudents + numberOfStudents; ++j) {
+                p.AddStudent(studentNames_set3.get(j));
+            }
+
+            if (i < set_1_professors) {
+                professorNames_set1.add(p);
+            }
+            if (i < set_2_professors) {
+                professorNames_set2.add(p);
+            }
+            professorNames_set3.add(p);
+
+        }
 
 
     }
 
+    public String generateRandomDate(){
+        int day = (int)Math.floor(Math.random()*(30-1+1)+1);
+        int month = (int)Math.floor(Math.random()*(12-1+1)+1);
+        int year = (int)Math.floor(Math.random()*(2022-1900+1)+1900);
+        String Date = Integer.toString(day) + "-" +Integer.toString(month) + "-" +Integer.toString(year);
+        return Date;
+    }
+
+    public long generateRandomTelephone(){
+        long telephone = 0;
+        Random rand = new Random();
+
+        for(int j = 0; j < 9; ++j){
+            int int_random = rand.nextInt(10);
+            telephone = telephone *10 + int_random;
+        }
+        return telephone;
+    }
+
+    public String generateAddressType(){
+        String[] types = new String[]{" Rue", " Route", " Avenue", " Street", " Road", " Lane", " Court", " Drive"};
+        Random rand = new Random();
+        int int_random = rand.nextInt(8);
+        return types[int_random];
+    }
+
+    public String generateGender(){
+        String[] types = new String[]{"Male", "Female", "Non-Binary"};
+        Random rand = new Random();
+        int int_random = rand.nextInt(3);
+        return types[int_random];
+    }
     public ArrayList<Student> getStudentNames_set1() {
         return studentNames_set1;
     }
