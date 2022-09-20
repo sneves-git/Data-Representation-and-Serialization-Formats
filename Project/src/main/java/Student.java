@@ -14,6 +14,13 @@ public class Student {
     @XmlElement(name = "name")
     String name;
 
+    Double telephone;
+
+    String gender;
+    String BirthDate;
+    String RegistrationDate;
+    String Address;
+
     @XmlElement(name = "age")
     String age;
 

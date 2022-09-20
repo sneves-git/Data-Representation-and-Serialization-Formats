@@ -12,14 +12,7 @@ public class App {
         JAXBContext jaxbContext = null;
         try {
 
-            jaxbContext = org.eclipse.persistence.jaxb.JAXBContextFactory
-                    .createContext(new Class[]{Student.class}, null);
-
-            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-
-            // output pretty printed
-            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
+            // ------ initialize data
             Student s1 = new Student();
             Student s2 = new Student();
             Student s3 = new Student();
@@ -34,6 +27,17 @@ public class App {
             students.add(s1);
             students.add(s2);
             students.add(s3);
+
+            // -------------------------------------
+
+            jaxbContext = org.eclipse.persistence.jaxb.JAXBContextFactory
+                    .createContext(new Class[]{Student.class}, null);
+
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+            // output pretty printed
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
 
             // output to a xml file
             jaxbMarshaller.marshal(students, new File("students.xml"));
