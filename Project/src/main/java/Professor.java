@@ -6,7 +6,6 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.util.ArrayList;
 
-
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Professor {
@@ -16,13 +15,13 @@ public class Professor {
     @XmlElement(name = "name")
     String name;
 
-    Double telephone;
+    long telephone;
     String BirthDate;
     String Address;
 
     ArrayList<Student> Students;
 
-    public Professor(int id, String name, Double telephone, String birthDate, String address) {
+    public Professor(int id, String name, long telephone, String birthDate, String address) {
         this.id = id;
         this.name = name;
         this.telephone = telephone;
@@ -31,7 +30,8 @@ public class Professor {
         Students = new ArrayList<>();
     }
 
-    public Professor(int id, String name, Double telephone, String birthDate, String address, ArrayList<Student> students) {
+    public Professor(int id, String name, long telephone, String birthDate, String address,
+            ArrayList<Student> students) {
         this.id = id;
         this.name = name;
         this.telephone = telephone;
@@ -39,7 +39,8 @@ public class Professor {
         Address = address;
         Students = students;
     }
-    public Professor(){
+
+    public Professor() {
         Students = new ArrayList<>();
     }
 
@@ -59,11 +60,11 @@ public class Professor {
         this.name = name;
     }
 
-    public Double getTelephone() {
+    public long getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(Double telephone) {
+    public void setTelephone(long telephone) {
         this.telephone = telephone;
     }
 
@@ -91,7 +92,19 @@ public class Professor {
         Students = students;
     }
 
-    public void AddStudent(Student s){
+    public void AddStudent(Student s) {
         Students.add(s);
+    }
+
+    @Override
+    public String toString() {
+        return "Professor{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", telephone=" + telephone +
+                ", BirthDate='" + BirthDate + '\'' +
+                ", Address='" + Address + '\'' +
+                ", Students=" + Students +
+                '}';
     }
 }
