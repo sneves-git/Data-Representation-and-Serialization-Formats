@@ -9,7 +9,6 @@ import java.util.ArrayList;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Professor {
-    @XmlAttribute
     int id;
 
     @XmlElement(name = "name")
