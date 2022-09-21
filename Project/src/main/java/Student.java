@@ -30,7 +30,7 @@ public class Student {
         Address = address;
     }
 
-    public void Student(){}
+    public Student(){}
 
     public int getId() {
         return this.id;

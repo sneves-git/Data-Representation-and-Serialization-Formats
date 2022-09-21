@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<professor>
+   <id>1</id>
+   <name>Tyrone Barnett</name>
+   <telephone>543589994</telephone>
+   <BirthDate>5-4-1901</BirthDate>
+   <Address>Renee Ward Avenue</Address>
+   <Students>
+      <id>1</id>
+      <name>Julie Sherman</name>
+      <telephone>961648354</telephone>
+      <gender>Male</gender>
+      <BirthDate>3-7-1958</BirthDate>
+      <RegistrationDate>12-6-1956</RegistrationDate>
+      <Address>Robert Cabrera Road</Address>
+   </Students>
+   <Students>
+      <id>2</id>
+      <name>Chase Rosario</name>
+      <telephone>440350176</telephone>
+      <gender>Non-Binary</gender>
+      <BirthDate>15-11-1912</BirthDate>
+      <RegistrationDate>17-1-1997</RegistrationDate>
+      <Address>Randy Hernandez Avenue</Address>
+   </Students>
+</professor>
+<?xml version="1.0" encoding="UTF-8"?>
+<professor>
+   <id>2</id>
+   <name>Rickey Watkins</name>
+   <telephone>294727494</telephone>
+   <BirthDate>8-9-1980</BirthDate>
+   <Address>Scott Campbell MD Avenue</Address>
+   <Students>
+      <id>3</id>
+      <name>Laura Cummings</name>
+      <telephone>274702769</telephone>
+      <gender>Male</gender>
+      <BirthDate>11-12-1978</BirthDate>
+      <RegistrationDate>23-1-1969</RegistrationDate>
+      <Address>James Barajas Lane</Address>
+   </Students>
+   <Students>
+      <id>4</id>
+      <name>Jacqueline Smith</name>
+      <telephone>214827027</telephone>
+      <gender>Female</gender>
+      <BirthDate>25-4-1952</BirthDate>
+      <RegistrationDate>23-9-1953</RegistrationDate>
+      <Address>Mariah Jones MD Street</Address>
+   </Students>
+</professor>
