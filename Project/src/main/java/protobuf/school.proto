@@ -1,0 +1,32 @@
+syntax = "proto3";
+package classes;
+
+// [START java_declaration]
+option java_multiple_files = true;
+option java_outer_classname = "ClassesProtobuf";
+// [END java_declaration]
+
+
+message Student{
+    int32 id = 1; // Unique ID number for this student.
+    string name = 2;
+    int32 telephone = 3;
+    string gender = 4;
+    string birthDate = 5;
+    string registrationDate = 6;
+    string address = 7;
+}
+
+message Professor{
+    int32 id = 1;
+    string name = 2;
+    int32 telephone = 3;
+    string birthDate = 4;
+    string address = 5;
+
+    repeated Student students = 6;
+}
+
+message School{
+    repeated Professor professors = 1;
+}

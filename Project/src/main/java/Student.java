@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Student {
-
+    @XmlAttribute
     int id;
 
     @XmlElement(name = "name")
