@@ -35,19 +35,34 @@ public class Input {
         studentNames_set3 = new ArrayList<>();
         professorNames_set3 = new ArrayList<>();
 
-        generateInput();
     }
+
+        public Input(int type) throws IOException {
+        studentNames_set1 = new ArrayList<>();
+        professorNames_set1 = new ArrayList<>();
+        
+        studentNames_set2 = new ArrayList<>();
+        professorNames_set2 = new ArrayList<>();
+
+        studentNames_set3 = new ArrayList<>();
+        professorNames_set3 = new ArrayList<>();
+
+        if(type == 1){
+            generateRandomInput();
+        }else if(type == 2){
+            generateInputWithTheSameLetter();
+        }
+    }
+
     
-    public void generateInput() throws IOException {
+    public void generateRandomInput() throws IOException {
 
 
         // ---- Students-----
-        String str = Files.readString(Path.of("src\\main\\java\\StudentNames.txt"));
+        String str = Files.readString(Path.of("src\\main\\java\\files\\StudentNames.txt"));
         String[] arrOfStr = str.split(",");
-        System.out.println(arrOfStr);
-        String strAddress = Files.readString(Path.of("src\\main\\java\\StudentAddress.txt"));
+        String strAddress = Files.readString(Path.of("src\\main\\java\\files\\StudentAddress.txt"));
         String[] arrOfStrAddress = strAddress.split(",");
-        System.out.println(arrOfStrAddress);
 
         for (int i = 0; i < set_3_students; i++) {
 
@@ -70,13 +85,11 @@ public class Input {
         }
 
         // ---- Professors-----
-        String strProf = Files.readString(Path.of("src\\main\\java\\ProfessorNames.txt"));
+        String strProf = Files.readString(Path.of("src\\main\\java\\files\\ProfessorNames.txt"));
         String[] arrOfStrProf = strProf.split(",");
-        System.out.println(arrOfStrProf);
 
-        String strAddressProf = Files.readString(Path.of("src\\main\\java\\ProfessorAddress.txt"));
+        String strAddressProf = Files.readString(Path.of("src\\main\\java\\files\\ProfessorAddress.txt"));
         String[] arrOfStrAddressProf = strAddressProf.split(",");
-        System.out.println(arrOfStrAddressProf);
         int numberOfStudents = set_1_students / set_1_professors;
 
         for (int i = 0; i < set_3_professors; i++) {
@@ -100,6 +113,49 @@ public class Input {
         }
 
 
+    }
+
+    public void generateInputWithTheSameLetter() throws IOException{
+        generateRandomInput();
+        for(int i = 0; i < set_3_students; ++i){
+            String name = studentNames_set3.get(i).getName();
+            String address = studentNames_set3.get(i).getAddress();
+
+            if (i < set_1_students) {
+                studentNames_set1.get(i).setName("a".repeat(name.length()));
+                studentNames_set1.get(i).setAddress("a".repeat(address.length()));
+            }
+
+            if (i < set_2_students) {
+                studentNames_set2.get(i).setName("a".repeat(name.length()));
+                studentNames_set2.get(i).setAddress("a".repeat(address.length()));
+
+            }
+            studentNames_set3.get(i).setName("a".repeat(name.length()));
+            studentNames_set3.get(i).setAddress("a".repeat(address.length()));
+
+        }
+
+
+        for(int i = 0; i < set_3_professors; ++i){
+            String name = professorNames_set3.get(i).getName();
+            String address = professorNames_set3.get(i).getAddress();
+
+            if (i < set_1_professors) {
+                professorNames_set1.get(i).setName("a".repeat(name.length()));
+                professorNames_set1.get(i).setAddress("a".repeat(address.length()));
+
+            }
+
+            if (i < set_2_professors) {
+                professorNames_set2.get(i).setName("a".repeat(name.length()));
+                professorNames_set2.get(i).setAddress("a".repeat(address.length()));
+
+            }
+            professorNames_set3.get(i).setName("a".repeat(name.length()));
+            professorNames_set3.get(i).setAddress("a".repeat(address.length()));
+
+        }
     }
 
     public String generateRandomDate(){
@@ -180,5 +236,53 @@ public class Input {
 
     public void setProfessorNames_set3(ArrayList<Professor> professorNames_set3) {
         this.professorNames_set3 = professorNames_set3;
+    }
+
+    public int getSet_1_students() {
+        return set_1_students;
+    }
+
+    public void setSet_1_students(int set_1_students) {
+        this.set_1_students = set_1_students;
+    }
+
+    public int getSet_2_students() {
+        return set_2_students;
+    }
+
+    public void setSet_2_students(int set_2_students) {
+        this.set_2_students = set_2_students;
+    }
+
+    public int getSet_3_students() {
+        return set_3_students;
+    }
+
+    public void setSet_3_students(int set_3_students) {
+        this.set_3_students = set_3_students;
+    }
+
+    public int getSet_1_professors() {
+        return set_1_professors;
+    }
+
+    public void setSet_1_professors(int set_1_professors) {
+        this.set_1_professors = set_1_professors;
+    }
+
+    public int getSet_2_professors() {
+        return set_2_professors;
+    }
+
+    public void setSet_2_professors(int set_2_professors) {
+        this.set_2_professors = set_2_professors;
+    }
+
+    public int getSet_3_professors() {
+        return set_3_professors;
+    }
+
+    public void setSet_3_professors(int set_3_professors) {
+        this.set_3_professors = set_3_professors;
     }
 }

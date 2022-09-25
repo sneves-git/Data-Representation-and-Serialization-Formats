@@ -12,15 +12,18 @@ import java.util.*;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+import generated.protobuf.classes.School;
+
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
 
         try {
             int numberOfSets = 3;
+          
             // ------ initialize data
-            Input inputGenerator = new Input();
+            Input inputGenerator = new Input(2);
             // ---- set 1 ------
             ArrayList<Student> studentNames_set1 = inputGenerator.getStudentNames_set1();
             ArrayList<Professor> professorNames_set1 = inputGenerator.getProfessorNames_set1();
@@ -50,10 +53,23 @@ public class App {
             System.out.println("\n------ Professors Set 3\n");
             System.out.println(professorNames_set3);
             ArrayList<Professor>[] arrays = wrapper(numberOfSets, professorNames_set1, professorNames_set2, professorNames_set3);
+
+            // XML 
             marshall(numberOfSets, arrays);
             unmarshall();
+
+            // Gzip
             marshallWithGzip(numberOfSets, arrays);
             unmarshallWithGzip();
+
+            // Protobuf
+            generateProtobufInput(1, "ResultProtobuf_set1", inputGenerator.getSet_1_professors(), inputGenerator.getSet_1_students());
+            generateProtobufInput(1, "ResultProtobuf_set2", inputGenerator.getSet_2_professors(), inputGenerator.getSet_2_students());
+            generateProtobufInput(1, "ResultProtobuf_set3", inputGenerator.getSet_3_professors(), inputGenerator.getSet_3_students());
+
+            generateProtobufInput(2, "ResultProtobufSameLetter_set1", inputGenerator.getSet_1_professors(), inputGenerator.getSet_1_students());
+            generateProtobufInput(2, "ResultProtobufSameLetter_set2", inputGenerator.getSet_2_professors(), inputGenerator.getSet_2_students());
+            generateProtobufInput(2, "ResultProtobufSameLetter_set3", inputGenerator.getSet_3_professors(), inputGenerator.getSet_3_students());
 
 
         } catch (IOException e) {
@@ -267,6 +283,16 @@ public class App {
         }
     }
 
+    public static void generateProtobufInput(int type, String fileName, int numberOfProfessors, int numberOfStudents) throws Exception {
+        
+        School schoolBuilder = AddSchool.PromptForSchool(type, numberOfProfessors, numberOfStudents);
 
+        System.out.println(AddSchool.getTotalTime());
+            
+        // Write the new address book back to disk.
+        FileOutputStream output = new FileOutputStream(fileName);
+        schoolBuilder.writeTo(output);
+        output.close();
+    }
 
 }
