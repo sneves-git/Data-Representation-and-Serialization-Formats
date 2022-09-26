@@ -10,8 +10,8 @@ public class Input {
     //private int set_1_professors = 10, set_2_professors = 100, set_3_professors = 1.000;
 
 
-    private int set_1_students = 2, set_2_students = 4, set_3_students = 6;
-    private int set_1_professors = 1, set_2_professors = 2, set_3_professors = 3;
+    private int set_1_students, set_2_students, set_3_students;
+    private int set_1_professors, set_2_professors, set_3_professors;
 
     // ---- set 1 ------
     private ArrayList<Student> studentNames_set1;
@@ -37,7 +37,7 @@ public class Input {
 
     }
 
-        public Input(int type) throws IOException {
+    public Input(int type, int a, int b, int c, int d, int e, int f) throws IOException {
         studentNames_set1 = new ArrayList<>();
         professorNames_set1 = new ArrayList<>();
         
@@ -46,6 +46,15 @@ public class Input {
 
         studentNames_set3 = new ArrayList<>();
         professorNames_set3 = new ArrayList<>();
+      
+
+        set_1_students = a;
+        set_2_students = b;
+        set_3_students = c;
+        set_1_professors = d; 
+        set_2_professors = e;
+        set_3_professors = f;
+
 
         if(type == 1){
             generateRandomInput();
@@ -65,8 +74,6 @@ public class Input {
         String[] arrOfStrAddress = strAddress.split(",");
 
         for (int i = 0; i < set_3_students; i++) {
-
-
             String birthDate = generateRandomDate();
             String registrationDate = generateRandomDate();
 

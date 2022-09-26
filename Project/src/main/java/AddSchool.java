@@ -62,7 +62,7 @@ public class AddSchool {
                 String studentRegistrationDate = generateRandomDate();
                 int studentTelephone = generateRandomTelephone();
 
-                student.setId(i+1);
+                student.setId(j+1);
                 if(type == 1){
                     student.setName(arrOfStr[j]);
                 }else if(type == 2){

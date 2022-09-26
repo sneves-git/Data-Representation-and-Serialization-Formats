@@ -1,0 +1,77 @@
+================== Marshalling 'RandomText' with XML ==================
+Set 1: 16303500
+Set 2: 46942300
+Set 3: 212574500
+
+================== Unmarshalling 'RandomText' with XML ================== 
+Set 1: 96819900
+Set 2: 120468200
+Set 3: 354894900
+
+================== Marshalling 'SameText' with XML ==================
+Set 1: 1793000
+Set 2: 14225300
+Set 3: 70752800
+
+================== Unmarshalling 'RandomText' with XML ================== 
+Set 1: 11205700
+Set 2: 26808300
+Set 3: 144566800
+
+================== Marshalling 'RandomText' with Gzip ================== 
+Set 1: 3044900
+Set 2: 33985300
+Set 3: 274360200
+
+================== Unmarshalling 'RandomText' with Gzip ================== 
+Set 1: 9017200
+Set 2: 24701100
+Set 3: 194646500
+
+================== Marshalling 'SameText' with Gzip ================== 
+Set 1: 2749000
+Set 2: 11032300
+Set 3: 179698600
+
+================== Unmarshalling 'RandomText' with Gzip ================== 
+Set 1: 21035400
+Set 2: 35890000
+Set 3: 157273400
+
+================== Marshalling 'RandomText' with Protobuf ================== 
+Set 1: 165600
+
+================== Unmarshalling 'SameText' with Protobuf ================== 
+Set 1: 12120900
+
+================== Marshalling 'RandomText' with Protobuf ================== 
+Set 2: 1756700
+
+================== Unmarshalling 'SameText' with Protobuf ================== 
+Set 2: 16117200
+
+================== Marshalling 'RandomText' with Protobuf ================== 
+Set 3: 7776000
+
+================== Unmarshalling 'SameText' with Protobuf ================== 
+Set 3: 21566200
+
+================== Marshalling 'SameText' with Protobuf ================== 
+Set 1: 7824900
+
+================== Unmarshalling 'SameText' with Protobuf ================== 
+Set 1: 8214000
+
+================== Marshalling 'SameText' with Protobuf ================== 
+Set 2: 8216700
+
+================== Unmarshalling 'SameText' with Protobuf ================== 
+Set 2: 8357500
+
+================== Marshalling 'SameText' with Protobuf ================== 
+Set 3: 11481600
+
+================== Unmarshalling 'SameText' with Protobuf ================== 
+Set 3: 15993500
+
+
