@@ -1,77 +1,77 @@
 ================== Marshalling 'RandomText' with XML ==================
-Set 1: 16303500
-Set 2: 46942300
-Set 3: 212574500
+Set 1: 19045800
+Set 2: 70719300
+Set 3: 217732600
 
 ================== Unmarshalling 'RandomText' with XML ================== 
-Set 1: 96819900
-Set 2: 120468200
-Set 3: 354894900
+Set 1: 127568900
+Set 2: 160908600
+Set 3: 312531100
 
 ================== Marshalling 'SameText' with XML ==================
-Set 1: 1793000
-Set 2: 14225300
-Set 3: 70752800
+Set 1: 1931300
+Set 2: 28832200
+Set 3: 90289000
 
 ================== Unmarshalling 'RandomText' with XML ================== 
-Set 1: 11205700
-Set 2: 26808300
-Set 3: 144566800
+Set 1: 27065800
+Set 2: 45388400
+Set 3: 179758800
 
 ================== Marshalling 'RandomText' with Gzip ================== 
-Set 1: 3044900
-Set 2: 33985300
-Set 3: 274360200
+Set 1: 5594900
+Set 2: 23449200
+Set 3: 177525400
 
 ================== Unmarshalling 'RandomText' with Gzip ================== 
-Set 1: 9017200
-Set 2: 24701100
-Set 3: 194646500
+Set 1: 14011300
+Set 2: 21128500
+Set 3: 119859700
 
 ================== Marshalling 'SameText' with Gzip ================== 
-Set 1: 2749000
-Set 2: 11032300
-Set 3: 179698600
+Set 1: 2423200
+Set 2: 12251200
+Set 3: 147701100
 
 ================== Unmarshalling 'RandomText' with Gzip ================== 
-Set 1: 21035400
-Set 2: 35890000
-Set 3: 157273400
+Set 1: 8669500
+Set 2: 18115600
+Set 3: 121320300
 
 ================== Marshalling 'RandomText' with Protobuf ================== 
-Set 1: 165600
+Set 1: 330700
 
-================== Unmarshalling 'SameText' with Protobuf ================== 
-Set 1: 12120900
-
-================== Marshalling 'RandomText' with Protobuf ================== 
-Set 2: 1756700
-
-================== Unmarshalling 'SameText' with Protobuf ================== 
-Set 2: 16117200
+================== Unmarshalling 'RandomText' with Protobuf ================== 
+Set 1: 28819500
 
 ================== Marshalling 'RandomText' with Protobuf ================== 
-Set 3: 7776000
+Set 2: 1208100
 
-================== Unmarshalling 'SameText' with Protobuf ================== 
-Set 3: 21566200
+================== Unmarshalling 'RandomText' with Protobuf ================== 
+Set 2: 18608900
 
-================== Marshalling 'SameText' with Protobuf ================== 
-Set 1: 7824900
+================== Marshalling 'RandomText' with Protobuf ================== 
+Set 3: 3555100
 
-================== Unmarshalling 'SameText' with Protobuf ================== 
-Set 1: 8214000
-
-================== Marshalling 'SameText' with Protobuf ================== 
-Set 2: 8216700
-
-================== Unmarshalling 'SameText' with Protobuf ================== 
-Set 2: 8357500
+================== Unmarshalling 'RandomText' with Protobuf ================== 
+Set 3: 32282400
 
 ================== Marshalling 'SameText' with Protobuf ================== 
-Set 3: 11481600
+Set 1: 3587200
 
 ================== Unmarshalling 'SameText' with Protobuf ================== 
-Set 3: 15993500
+Set 1: 6383500
+
+================== Marshalling 'SameText' with Protobuf ================== 
+Set 2: 3741800
+
+================== Unmarshalling 'SameText' with Protobuf ================== 
+Set 2: 6890500
+
+================== Marshalling 'SameText' with Protobuf ================== 
+Set 3: 5505200
+
+================== Unmarshalling 'SameText' with Protobuf ================== 
+Set 3: 41336700
 
 
