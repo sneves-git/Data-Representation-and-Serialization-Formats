@@ -30,14 +30,6 @@
             <version>3.0.0</version>
         </dependency>
 
-        <!-- JAXB RI, Jakarta XML Binding -->
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>3.0.0</version>
-            <scope>runtime</scope>
-        </dependency>
-
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
