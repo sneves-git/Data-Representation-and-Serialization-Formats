@@ -22,7 +22,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         try {
-            int numberOfSets = 3, numberOfTests = 4;
+            int numberOfSets = 3, numberOfTests = 30;
 
             // ------ number of students and professors
             int set_1_students = 100, set_2_students = 1000, set_3_students = 10000;
