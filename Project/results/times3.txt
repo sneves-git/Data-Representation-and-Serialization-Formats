@@ -1,0 +1,140 @@
+--------Marshall XML RandomText
+- Set 1
+2296666
+- Set 2
+10494246
+- Set 3
+70075250
+--------Marshall XML SameText
+- Set 1
+2149576
+- Set 2
+7571853
+- Set 3
+86885290
+--------Marshall Gzip RandomText
+- Set 1
+2803980
+- Set 2
+20489560
+- Set 3
+188116476
+--------Marshall Gzip SameText
+- Set 1
+2051970
+- Set 2
+15009866
+- Set 3
+148835620
+--------Marshall Protobuf RandomText
+- Set 1
+24943
+- Set 2
+142530
+- Set 3
+1061360
+--------Marshall Protobuf SameText
+- Set 1
+16870
+- Set 2
+122810
+- Set 3
+979273
+--------Marshall Protobuf RandomText Writer
+- Set 1
+1187560
+- Set 2
+1654466
+- Set 3
+9879670
+--------Marshall Protobuf SameText Writer
+- Set 1
+246740
+- Set 2
+1367970
+- Set 3
+12653123
+--------Marshall Protobuf RandomText Total
+- Set 1
+1212503
+- Set 2
+1796996
+- Set 3
+10941030
+--------Marshall Protobuf SameText Total
+- Set 1
+263610
+- Set 2
+1490780
+- Set 3
+13632396
+--------Unmarshall XML RandomText
+- Set 1
+15138340
+- Set 2
+25186100
+- Set 3
+110981736
+--------Unmarshall XML SameText
+- Set 1
+14818330
+- Set 2
+22617193
+- Set 3
+120963430
+--------Unmarshall Gzip RandomText
+- Set 1
+27305763
+- Set 2
+24368790
+- Set 3
+154569993
+--------Unmarshall Gzip SameText
+- Set 1
+10037726
+- Set 2
+25054636
+- Set 3
+135687403
+--------Unmarshall Protobuf RandomText
+- Set 1
+584730
+- Set 2
+721426
+- Set 3
+5876333
+--------Unmarshall Protobuf SameText
+- Set 1
+205206
+- Set 2
+959543
+- Set 3
+6044953
+--------Unmarshall Protobuf RandomText Writer
+- Set 1
+83540
+- Set 2
+554916
+- Set 3
+4777906
+--------Unmarshall Protobuf SameText Writer
+- Set 1
+53083
+- Set 2
+502323
+- Set 3
+4548000
+--------Unmarshall Protobuf RandomText Total
+- Set 1
+668270
+- Set 2
+1276343
+- Set 3
+10654240
+--------Unmarshall Protobuf SameText Total
+- Set 1
+258290
+- Set 2
+1461866
+- Set 3
+10592953

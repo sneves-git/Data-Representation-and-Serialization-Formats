@@ -1,6 +1,7 @@
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Helper {
     public ArrayList<Long> xmlSet1RandomText,
@@ -430,53 +431,225 @@ public class Helper {
         this.protobufSet3SameTextTotal = protobufSet3SameTextTotal;
     }
 
+    public long getAverage( ArrayList<Long> a){
+        long sum = 0;
+        for(int i = 10; i<a.size(); ++i ){
+            sum += a.get(i);
+        }
+        return sum/(a.size()-10);
+    }
+
+    public long SD(ArrayList<Long> a){
+        long standardDeviation = 0;
+        long mean = getAverage(a);
+        for(int i = 10; i<a.size(); ++i ){
+            standardDeviation += Math.pow(a.get(i)-mean, 2);
+        }
+        return (long)Math.sqrt(standardDeviation/(a.size()-10));
+    }
+
     public void printer(String type) throws FileNotFoundException {
 
             //print marshallHelper
             System.out.println("--------"+ type + " XML RandomText");
             System.out.println("- Set 1");
-            System.out.println(getXmlSet1RandomText());
+            System.out.println(getAverage(getXmlSet1RandomText()));
             System.out.println("- Set 2");
-            System.out.println(getXmlSet2RandomText());
+            System.out.println(getAverage(getXmlSet2RandomText()));
             System.out.println("- Set 3");
-            System.out.println(getXmlSet3RandomText());
+            System.out.println(getAverage(getXmlSet3RandomText()));
             System.out.println("--------"+ type + " XML SameText");
             System.out.println("- Set 1");
-            System.out.println(getXmlSet1SameText());
+            System.out.println(getAverage(getXmlSet1SameText()));
             System.out.println("- Set 2");
-            System.out.println(getXmlSet2SameText());
+            System.out.println(getAverage(getXmlSet2SameText()));
             System.out.println("- Set 3");
-            System.out.println(getXmlSet3SameText());
+            System.out.println(getAverage(getXmlSet3SameText()));
 
             System.out.println("--------"+ type + " Gzip RandomText");
             System.out.println("- Set 1");
-            System.out.println(getGzipSet1RandomText());
+            System.out.println(getAverage(getGzipSet1RandomText()));
             System.out.println("- Set 2");
-            System.out.println(getGzipSet2RandomText());
+            System.out.println(getAverage(getGzipSet2RandomText()));
             System.out.println("- Set 3");
-            System.out.println(getGzipSet3RandomText());
+            System.out.println(getAverage(getGzipSet3RandomText()));
             System.out.println("--------"+ type + " Gzip SameText");
             System.out.println("- Set 1");
-            System.out.println(getGzipSet1SameText());
+            System.out.println(getAverage(getGzipSet1SameText()));
             System.out.println("- Set 2");
-            System.out.println(getGzipSet2SameText());
+            System.out.println(getAverage(getGzipSet2SameText()));
             System.out.println("- Set 3");
-            System.out.println(getGzipSet3SameText());
+            System.out.println(getAverage(getGzipSet3SameText()));
 
             System.out.println("--------"+ type + " Protobuf RandomText");
             System.out.println("- Set 1");
-            System.out.println(getProtobufSet1RandomText());
+            System.out.println(getAverage(getProtobufSet1RandomText()));
             System.out.println("- Set 2");
-            System.out.println(getProtobufSet2RandomText());
+            System.out.println(getAverage(getProtobufSet2RandomText()));
             System.out.println("- Set 3");
-            System.out.println(getProtobufSet3RandomText());
+            System.out.println(getAverage(getProtobufSet3RandomText()));
             System.out.println("--------"+ type + " Protobuf SameText");
             System.out.println("- Set 1");
-            System.out.println(getProtobufSet1SameText());
+            System.out.println(getAverage(getProtobufSet1SameText()));
             System.out.println("- Set 2");
-            System.out.println(getProtobufSet2SameText());
+            System.out.println(getAverage(getProtobufSet2SameText()));
             System.out.println("- Set 3");
-            System.out.println(getProtobufSet3SameText());
+            System.out.println(getAverage(getProtobufSet3SameText()));
+
+
+        System.out.println("--------"+ type + " Protobuf RandomText Writer");
+        System.out.println("- Set 1");
+        System.out.println(getAverage(getProtobufSet1RandomTextWrite()));
+        System.out.println("- Set 2");
+        System.out.println(getAverage(getProtobufSet2RandomTextWrite()));
+        System.out.println("- Set 3");
+        System.out.println(getAverage(getProtobufSet3RandomTextWrite()));
+        System.out.println("--------"+ type + " Protobuf SameText Writer");
+        System.out.println("- Set 1");
+        System.out.println(getAverage(getProtobufSet1SameTextWrite()));
+        System.out.println("- Set 2");
+        System.out.println(getAverage(getProtobufSet2SameTextWrite()));
+        System.out.println("- Set 3");
+        System.out.println(getAverage(getProtobufSet3SameTextWrite()));
+
+        System.out.println("--------"+ type + " Protobuf RandomText Total");
+        System.out.println("- Set 1");
+        System.out.println(getAverage(getProtobufSet1RandomTextTotal()));
+        System.out.println("- Set 2");
+        System.out.println(getAverage(getProtobufSet2RandomTextTotal()));
+        System.out.println("- Set 3");
+        System.out.println(getAverage(getProtobufSet3RandomTextTotal()));
+        System.out.println("--------"+ type + " Protobuf SameText Total");
+        System.out.println("- Set 1");
+        System.out.println(getAverage(getProtobufSet1SameTextTotal()));
+        System.out.println("- Set 2");
+        System.out.println(getAverage(getProtobufSet2SameTextTotal()));
+        System.out.println("- Set 3");
+        System.out.println(getAverage(getProtobufSet3SameTextTotal()));
+
+        //      standard deviation
+        //print marshallHelper
+        System.out.println("--------"+ type + " XML RandomText");
+        System.out.println("- Set 1");
+        System.out.println(SD(getXmlSet1RandomText()));
+        System.out.println("- Set 2");
+        System.out.println(SD(getXmlSet2RandomText()));
+        System.out.println("- Set 3");
+        System.out.println(SD(getXmlSet3RandomText()));
+        System.out.println("--------"+ type + " XML SameText");
+        System.out.println("- Set 1");
+        System.out.println(SD(getXmlSet1SameText()));
+        System.out.println("- Set 2");
+        System.out.println(SD(getXmlSet2SameText()));
+        System.out.println("- Set 3");
+        System.out.println(SD(getXmlSet3SameText()));
+
+        System.out.println("--------"+ type + " Gzip RandomText");
+        System.out.println("- Set 1");
+        System.out.println(SD(getGzipSet1RandomText()));
+        System.out.println("- Set 2");
+        System.out.println(SD(getGzipSet2RandomText()));
+        System.out.println("- Set 3");
+        System.out.println(SD(getGzipSet3RandomText()));
+        System.out.println("--------"+ type + " Gzip SameText");
+        System.out.println("- Set 1");
+        System.out.println(SD(getGzipSet1SameText()));
+        System.out.println("- Set 2");
+        System.out.println(SD(getGzipSet2SameText()));
+        System.out.println("- Set 3");
+        System.out.println(SD(getGzipSet3SameText()));
+
+        System.out.println("--------"+ type + " Protobuf RandomText");
+        System.out.println("- Set 1");
+        System.out.println(SD(getProtobufSet1RandomText()));
+        System.out.println("- Set 2");
+        System.out.println(SD(getProtobufSet2RandomText()));
+        System.out.println("- Set 3");
+        System.out.println(SD(getProtobufSet3RandomText()));
+        System.out.println("--------"+ type + " Protobuf SameText");
+        System.out.println("- Set 1");
+        System.out.println(SD(getProtobufSet1SameText()));
+        System.out.println("- Set 2");
+        System.out.println(SD(getProtobufSet2SameText()));
+        System.out.println("- Set 3");
+        System.out.println(SD(getProtobufSet3SameText()));
+
+
+        System.out.println("--------"+ type + " Protobuf RandomText Writer");
+        System.out.println("- Set 1");
+        System.out.println(SD(getProtobufSet1RandomTextWrite()));
+        System.out.println("- Set 2");
+        System.out.println(SD(getProtobufSet2RandomTextWrite()));
+        System.out.println("- Set 3");
+        System.out.println(SD(getProtobufSet3RandomTextWrite()));
+        System.out.println("--------"+ type + " Protobuf SameText Writer");
+        System.out.println("- Set 1");
+        System.out.println(SD(getProtobufSet1SameTextWrite()));
+        System.out.println("- Set 2");
+        System.out.println(SD(getProtobufSet2SameTextWrite()));
+        System.out.println("- Set 3");
+        System.out.println(SD(getProtobufSet3SameTextWrite()));
+
+        System.out.println("--------"+ type + " Protobuf RandomText Total");
+        System.out.println("- Set 1");
+        System.out.println(SD(getProtobufSet1RandomTextTotal()));
+        System.out.println("- Set 2");
+        System.out.println(SD(getProtobufSet2RandomTextTotal()));
+        System.out.println("- Set 3");
+        System.out.println(SD(getProtobufSet3RandomTextTotal()));
+        System.out.println("--------"+ type + " Protobuf SameText Total");
+        System.out.println("- Set 1");
+        System.out.println(SD(getProtobufSet1SameTextTotal()));
+        System.out.println("- Set 2");
+        System.out.println(SD(getProtobufSet2SameTextTotal()));
+        System.out.println("- Set 3");
+        System.out.println(SD(getProtobufSet3SameTextTotal()));
+
+        //print marshallHelper
+        System.out.println("--------"+ type + " XML RandomText");
+        System.out.println("- Set 1");
+        System.out.println(getXmlSet1RandomText());
+        System.out.println("- Set 2");
+        System.out.println(getXmlSet2RandomText());
+        System.out.println("- Set 3");
+        System.out.println(getXmlSet3RandomText());
+        System.out.println("--------"+ type + " XML SameText");
+        System.out.println("- Set 1");
+        System.out.println(getXmlSet1SameText());
+        System.out.println("- Set 2");
+        System.out.println(getXmlSet2SameText());
+        System.out.println("- Set 3");
+        System.out.println(getXmlSet3SameText());
+
+        System.out.println("--------"+ type + " Gzip RandomText");
+        System.out.println("- Set 1");
+        System.out.println(getGzipSet1RandomText());
+        System.out.println("- Set 2");
+        System.out.println(getGzipSet2RandomText());
+        System.out.println("- Set 3");
+        System.out.println(getGzipSet3RandomText());
+        System.out.println("--------"+ type + " Gzip SameText");
+        System.out.println("- Set 1");
+        System.out.println(getGzipSet1SameText());
+        System.out.println("- Set 2");
+        System.out.println(getGzipSet2SameText());
+        System.out.println("- Set 3");
+        System.out.println(getGzipSet3SameText());
+
+        System.out.println("--------"+ type + " Protobuf RandomText");
+        System.out.println("- Set 1");
+        System.out.println(getProtobufSet1RandomText());
+        System.out.println("- Set 2");
+        System.out.println(getProtobufSet2RandomText());
+        System.out.println("- Set 3");
+        System.out.println(getProtobufSet3RandomText());
+        System.out.println("--------"+ type + " Protobuf SameText");
+        System.out.println("- Set 1");
+        System.out.println(getProtobufSet1SameText());
+        System.out.println("- Set 2");
+        System.out.println(getProtobufSet2SameText());
+        System.out.println("- Set 3");
+        System.out.println(getProtobufSet3SameText());
 
 
         System.out.println("--------"+ type + " Protobuf RandomText Writer");

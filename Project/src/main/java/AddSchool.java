@@ -79,13 +79,17 @@ public class AddSchool {
                 }
 
                 startTime = System.nanoTime();
-                professor.addStudents(student.build());
+                Student s = student.build();
                 totalTime = totalTime + (System.nanoTime() - startTime);
+                professor.addStudents(s);
+
             }
             
             startTime = System.nanoTime();
-            school.addProfessors(professor.build());
+            Professor p = professor.build();
             totalTime = totalTime + (System.nanoTime() - startTime);
+            school.addProfessors(p);
+
         }
 
         startTime = System.nanoTime();

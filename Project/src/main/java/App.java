@@ -116,7 +116,7 @@ public class App {
             }
 
 
-            PrintStream stream = new PrintStream("results/times.txt");
+            PrintStream stream = new PrintStream("results/times6.txt");
             System.setOut(stream);
             marshallHelper.printer("Marshall");
             unmarshallHelper.printer("Unmarshall");
@@ -329,6 +329,7 @@ public class App {
             time = time + "================== Marshalling 'SameText' with Protobuf ================== \n";
             typeOfText = "'SameText'";
         }
+        AddSchool.totalTime = 0;
         School schoolBuilder = AddSchool.PromptForSchool(type, numberOfProfessors, numberOfStudents);
 
         time = time + "Set " + set + ": " + AddSchool.getTotalTime() + "\n";
@@ -352,8 +353,9 @@ public class App {
         long startTime, totalTime;
 
         // Read the existing address book.
+        FileInputStream f = new FileInputStream(inputFileName);
         startTime = System.nanoTime();
-        School school = School.parseFrom(new FileInputStream(inputFileName));
+        School school = School.parseFrom(f);
         totalTime = System.nanoTime() - startTime;
 
         long unbuild = protoObjectToJavaObject(school, numberOfProfessors, numberOfStudents);
