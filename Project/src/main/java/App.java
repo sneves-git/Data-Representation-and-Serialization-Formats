@@ -160,10 +160,7 @@ public class App {
                 holdProfessors.setProfessors(arrays[i]);
 
                 startTime = System.nanoTime();
-
-                // output to a xml file
                 jaxbMarshaller.marshal(holdProfessors, file);
-
                 totalTime = System.nanoTime() - startTime;
 
                 time = time + "Set " + (i + 1) + ": " + totalTime + "\n";
@@ -193,10 +190,7 @@ public class App {
                 File file = new File(fileName + "_set" + (i + 1) + ".xml");
 
                 startTime = System.nanoTime();
-
-                // output to a xml file
                 Holder profs = (Holder) jaxbUnmarshaller.unmarshal(file);
-
                 totalTime = System.nanoTime() - startTime;
 
                 time = time + "Set " + (i + 1) + ": " + totalTime + "\n";
@@ -233,7 +227,6 @@ public class App {
                 holdProfessors.setProfessors(arrays[i]);
 
                 startTime = System.nanoTime();
-                // output to a xml file
                 jaxbMarshaller.marshal(holdProfessors, file);
                 totalTime = System.nanoTime() - startTime;
 
@@ -245,12 +238,10 @@ public class App {
                 int len;
 
                 startTime = System.nanoTime();
-                // Gzip
                 while ((len = fis.read(buffer)) != -1) {
                     gzipOS.write(buffer, 0, len);
                 }
-                // Time
-                totalTime = totalTime + (System.nanoTime() - startTime);
+                totalTime += (System.nanoTime() - startTime);
 
                 time = time + "Set " + (i + 1) + ": " + totalTime + "\n";
 
@@ -293,15 +284,10 @@ public class App {
                 File file = new File(unmarshallXmlWithGzipFileName + "_set" + (i + 1) + ".xml");
 
                 startTime = System.nanoTime();
-
-                // Gzip Decompression
                 while ((len = gis.read(buffer)) != -1) {
                     fos.write(buffer, 0, len);
                 }
-                // output to a xml file
                 Holder profs = (Holder) jaxbUnmarshaller.unmarshal(file);
-
-                // Time
                 totalTime = System.nanoTime() - startTime;
 
                 time = time + "Set " + (i + 1) + ": " + totalTime + "\n";
